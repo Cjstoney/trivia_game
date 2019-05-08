@@ -44,6 +44,10 @@ var arrayOfCorAns = [Q1.corAns, Q2.corAns, Q3.corAns, Q4.corAns, Q5.corAns]
 // console.log to test array
 console.log(arrayOfCorAns);
 
+
+
+
+
 // setting up the timer
 
 var number= 30;
