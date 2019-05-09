@@ -1,15 +1,16 @@
 // list of objects
-var Q1=[{
+var Q1=new Object;
+/*[{
     qestion:"The beaver is the national emblem of which country?",
     answer:["Canada", 
             "Alaska", 
             "Germany",
             "Norway"],
     correctAnswer:0,
-}]
+}]*/
 
 // which is better practice
-=new Object;
+
 Q1.question= "The beaver is the national emblem of which country?";
 Q1.corAns = "Canada";
 Q1.wngAns1 = "Alaska";

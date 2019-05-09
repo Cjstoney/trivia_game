@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body{
+    background:#5F5F5F;
+    height:100%;
+    width:100%;
+}
+
+.game-card{
+    background:#FAEFEA;
+    width:75%;
+    padding:20px;
+    margin:50px auto;
+    text-align: center;
+}
+
+.title{
+    font-size: 44px;
+    color:red;
+    padding: 20px
+}
+
+.question{
+    font-size:34px;
+    padding:20px;
+}
+
+.answer{
+    border-style:none;
+    background:#FAEFEA;
+    font-size: 30px;
+    padding: 5px ;
+}
+
+.button-containers{
+    padding:auto;
+    margin: 20px;
+}
