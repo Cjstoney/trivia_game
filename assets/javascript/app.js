@@ -1,15 +1,20 @@
 // list of objects
-var Q1=new Object;
+var Q1=[{
+    qestion:"The beaver is the national emblem of which country?",
+    answer:["Canada", 
+            "Alaska", 
+            "Germany",
+            "Norway"],
+    correctAnswer:0,
+}]
+
+// which is better practice
+=new Object;
 Q1.question= "The beaver is the national emblem of which country?";
 Q1.corAns = "Canada";
 Q1.wngAns1 = "Alaska";
 Q1.wngAns2 = "Germany";
 Q1.wngAns3 = "Norway";
-
-// place correct answers in an array
-// capture click
-// compare captured click with array of correct answers
-// if clicked answer is found, alert win
 
 var Q2= new Object;
 Q2.question = "Which singer’s real name is Stefani Joanne Angelina Germanotta?";
@@ -106,7 +111,4 @@ $("#question-5").html(Q5.question);
 
 
 });
-
-
-
 
