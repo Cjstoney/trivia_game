@@ -1,6 +1,6 @@
 // list of objects
 var Q1={
-    qestion:"The beaver is the national emblem of which country?",
+    question: "The beaver is the national emblem of which country?",
     answer:["Canada", 
             "Alaska", 
             "Germany",
@@ -9,12 +9,6 @@ var Q1={
 };
 
 // which is better practice
-
-/*Q1.question= "The beaver is the national emblem of which country?";
-Q1.corAns = "Canada";
-Q1.wngAns1 = "Alaska";
-Q1.wngAns2 = "Germany";
-Q1.wngAns3 = "Norway";*/
 
 var Q2= new Object;
 Q2.question = "Which singer’s real name is Stefani Joanne Angelina Germanotta?";
@@ -68,10 +62,13 @@ function timer(){
 $( document ).ready(function() {
 // question 1
     $("#question-1").text(Q1.question);
-    $("#answer-1").html(Q1.corAns);
-    $("#answer-2").html(Q1.wngAns1);
-    $("#answer-3").html(Q1.wngAns2);
-    $("#answer-4").html(Q1.wngAns3);
+    $("#answer-1").text(Q1.answer[0]);
+    $("#answer-2").text(Q1.answer[1]);
+    $("#answer-3").text(Q1.answer[2]);
+    $("#answer-4").text(Q1.answer[3]);
     timer();
+    $("document").on("click")
+
+    
 });
 
