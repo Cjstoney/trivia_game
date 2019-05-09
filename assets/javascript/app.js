@@ -1,23 +1,20 @@
 // list of objects
 var Q1={
     question: "The beaver is the national emblem of which country?",
-    answer:["Canada", 
-            "Alaska", 
-            "Germany",
-            "Norway"],
+    answer:["Canada", "Alaska", "Germany","Norway"],
     correctAnswer:0,
 };
 
-// which is better practice
 
-var Q2= new Object;
-Q2.question = "Which singer’s real name is Stefani Joanne Angelina Germanotta?";
-Q2.corAns = "Lady Gaga";
-Q2.wngAns1 = "Gwen Stefani";
-Q2.wngAns2 = "Beyonce";
-Q2.wngAns3 = "Angelina Jolie";
+var Q2={
+    question :"Which singer’s real name is Stefani Joanne Angelina Germanotta?",
+    answer:["Gwen Stefani", "Lady Gaga", "Beyonce", "Angelina Jolie"],
+    correctAnswer:1
+};
 
-var Q3= new Object;
+ 
+
+/*var Q3= new Object;
 Q3.question = " Which TV character said, 'Live long and prosper'";
 Q3.corAns = "Mr. Spock";
 Q3.wngAns1 = "Tommy Pickles";
@@ -36,7 +33,7 @@ Q5.question = "What is Chandler’s last name in the sitcom Friends?";
 Q5.corAns = "Bing";
 Q5.wngAns1 = "Bong";
 Q5.wngAns2 = "Ding";
-Q5.wngAns3 = "Geller";
+Q5.wngAns3 = "Geller";*/
 
 // array to check correct answer
 var arrayOfCorAns = [Q1.corAns, Q2.corAns, Q3.corAns, Q4.corAns, Q5.corAns]
