@@ -55,24 +55,18 @@ console.log(arrayOfCorAns);
 
 
 // setting up the timer
-
-var number= 30;
-var intervalId;
-
-// run function for timer
-function run(){
-    intervalId = setInterval(decrement, 300);
-}
-
+var counter =30
+var interval= setInterval("timer()", 1000);
 // countdown display
-function decrement(){
-    number--;
-    $("show-number").html("<h2>"+ number + "</h2>");
-    if(number === 0){
-        stop();
-        // full page sorry you have lost. try the next question
-    }
+
+function timer(){
+   counter--;
+   $("#timer").text(counter)
+   if(coutner <= 0){
+       clearInterval(interval)
+   };
 }
+
 
 $( document ).ready(function() {
 // question 1
@@ -81,35 +75,6 @@ $( document ).ready(function() {
     $("#answer-2").html(Q1.wngAns1);
     $("#answer-3").html(Q1.wngAns2);
     $("#answer-4").html(Q1.wngAns3);
-
-// question 2
-
-$("#question-2").html(Q2.question);
-    $("#answer2-1").html(Q2.corAns);
-    $("#answer2-2").html(Q2.wngAns1);
-    $("#answer2-3").html(Q2.wngAns2);
-    $("#answer2-4").html(Q2.wngAns3);
-// question 3
-$("#question-3").html(Q3.question);
-    $("#answer3-1").html(Q3.corAns);
-    $("#answer3-2").html(Q3.wngAns1);
-    $("#answer3-3").html(Q3.wngAns2);
-    $("#answer3-4").html(Q3.wngAns3);
-
-// question 4
-$("#question-4").html(Q4.question);
-    $("#answer4-1").html(Q4.corAns);
-    $("#answer4-2").html(Q4.wngAns1);
-    $("#answer4-3").html(Q4.wngAns2);
-    $("#answer4-4").html(Q4.wngAns3);
-
-// question 5
-$("#question-5").html(Q5.question);
-    $("#answer5-1").html(Q5.corAns);
-    $("#answer5-2").html(Q5.wngAns1);
-    $("#answer5-3").html(Q5.wngAns2);
-    $("#answer5-4").html(Q5.wngAns3);
-
-
+    timer();
 });
 
