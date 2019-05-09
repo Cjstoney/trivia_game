@@ -1,21 +1,20 @@
 // list of objects
-var Q1=new Object;
-/*[{
+var Q1={
     qestion:"The beaver is the national emblem of which country?",
     answer:["Canada", 
             "Alaska", 
             "Germany",
             "Norway"],
     correctAnswer:0,
-}]*/
+};
 
 // which is better practice
 
-Q1.question= "The beaver is the national emblem of which country?";
+/*Q1.question= "The beaver is the national emblem of which country?";
 Q1.corAns = "Canada";
 Q1.wngAns1 = "Alaska";
 Q1.wngAns2 = "Germany";
-Q1.wngAns3 = "Norway";
+Q1.wngAns3 = "Norway";*/
 
 var Q2= new Object;
 Q2.question = "Which singer’s real name is Stefani Joanne Angelina Germanotta?";
@@ -55,22 +54,20 @@ console.log(arrayOfCorAns);
 
 
 // setting up the timer
-var counter =30
+var counter =10;
 var interval= setInterval("timer()", 1000);
-// countdown display
 
+// countdown display
 function timer(){
    counter--;
    $("#timer").text(counter)
-   if(coutner <= 0){
-       clearInterval(interval)
-   };
+   
 }
 
 
 $( document ).ready(function() {
 // question 1
-    $("#question-1").html(Q1.question);
+    $("#question-1").text(Q1.question);
     $("#answer-1").html(Q1.corAns);
     $("#answer-2").html(Q1.wngAns1);
     $("#answer-3").html(Q1.wngAns2);
