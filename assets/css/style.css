@@ -39,3 +39,20 @@ body{
     padding:auto;
     margin: 20px;
 }
+
+.start-page{
+    background:#FAEFEA;
+    width:75%;
+    padding:20px;
+    margin:50px auto;
+    text-align: center;
+}
+
+button{
+    text-emphasis: none;
+    font-size: 24px;
+    padding:20px;
+    margin: 10px;
+    background:#FAEFEA;
+    border-style: none;
+}
