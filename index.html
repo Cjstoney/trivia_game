@@ -8,13 +8,14 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <!-- stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-   
+
 </head>
 <!-- body section  -->
 
 <body>
     <div class="background-container">
         <div class="start-page">
+            <img src="assets/images/trebek.jpg">
             <h1 class="title">Trivia Game!</h1>
             <button class="start-button">Start!</button>
         </div>
@@ -24,19 +25,21 @@
             <h1 class="title">Trivia Game!</h1>
             <h2 id="timer">0</h2>
             <h2 class="question" id="question-1"></h2>
-        <div class="question-container"></div>
-        <div class="results"></div>
-
-        <div id="final-page">
-            <h1 class=title></h1>
-            <h3 id="right-wrong"></h3>
+            <div class="question-container"></div>
+            <div class="results"></div>
         </div>
-        </div> 
-        
-        
-       
-<!-- jquery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <div id="final-page">
+            <h1 class="title">Trivia Game!</h1>
+            <h3 id='answered-right'></h3>
+            <h3 id='answered-wrong'></h3>
+            <h3 id='unanswered'></h3>
+
+        </div>
+    </div>
+
+
+    <!-- jquery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
     <!-- link to js file -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>

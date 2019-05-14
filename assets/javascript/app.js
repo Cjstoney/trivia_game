@@ -43,9 +43,9 @@ var questions = [
         correctAnswer: "Miami"
     },
     {
-        question: "Little Cuba is the nickname of which US city?",
-        choices: ["San Diego", "Havana", "Miami", "San Antonio"],
-        correctAnswer: "Miami"
+        question: "In which sport would you perform the Fosbury Flop?",
+        choices: ["Soccer", "The High Jump", "Polo", "Hockey"],
+        correctAnswer: "The High Jump"
     },
     {
         question: "The Statue of Liberty was given to the US by which country?",
@@ -56,52 +56,74 @@ var questions = [
 
 var correctResults = 0
 var wrongResults = 0
-
+var unanswered = 0
 // function to display results page
 
-function finalPage(){
+function finalPage() {
     $('.title').html('Results')
     $('#right-wrong').html(correctResults, wrongResults)
 }
 
 // setting up the timer
-var counter = 30;
+var counter = 9;
+$("#timer").text(counter)
 var interval = setInterval(timer, 1000);
 
+// starting index for the for loop
+var index = 0
 // countdown display
 function timer() {
     counter--;
     $("#timer").text(counter)
     if (counter === 0) {
         $('.results').html("I am sorry, time has run out. Give the next question another shot")
+        unanswered++
         clearInterval(interval)
-    }
 
+        setTimeout(function () {
+            incorrect(questions[index].correctAnswer)
+            index++
+            displayNextQuestion()
+            $('.results').empty()
+
+        }, 3000)
+    }
 }
 
-// starting index for the for loop
-var index = 0
 
 // create a function to display the questions and answers
 function displayNextQuestion() {
-    // emptied do buttons and questions do not stack up
-    $('.question-container').empty()
-    counter = 34;
-    // put question text in the container
-    $(".question").html(questions[index].question);
-    // for loop to put each of the possible answers as a button
-    for (var i = 0; i < questions[index].choices.length; i++) {
-        console.log(questions[index].choices[i])
-        // creating new button in HTML
-        var newButton = $("<button>")
-        console.log(newButton)
-        // assigning the text in the button
-        newButton.text(questions[index].choices[i]);
-        // assigning a class to the button
-        newButton.addClass('user-choice');
-        // adding new id to button
-        $('.question-container').append(newButton);
-        timer();
+    if(index > 8){
+        clearInterval(interval)
+        $(".game-card").empty()
+        $("#final-page").show()
+        totalResults()
+        
+    }else{
+
+        // emptied do buttons and questions do not stack up
+        $('.question-container').empty()
+        counter = 9;
+        console.log(counter)
+        // put question text in the container
+        $(".question").html(questions[index].question);
+        // for loop to put each of the possible answers as a button
+        for (var i = 0; i < questions[index].choices.length; i++) {
+            console.log(questions[index].choices[i])
+            // creating new button in HTML
+            var newButton = $("<button>")
+            console.log(newButton)
+            // assigning the text in the button
+            newButton.text(questions[index].choices[i]);
+            // assigning a class to the button
+            newButton.addClass('user-choice');
+            // adding new id to button
+            $('.question-container').append(newButton);
+            
+        }
+        clearInterval(interval)
+        interval = setInterval(timer, 1000);
+        
     }
 }
 
@@ -115,6 +137,7 @@ function incorrect(ans) {
     timer()
     var falseText = $("<h2>")
     $('.results').html(wrongMessage)
+    wrongResults++
 }
 
 
@@ -125,43 +148,51 @@ function correctChoice() {
     counter = 10
     timer()
     $('.results').html(rightAnswer)
+    correctResults++
 }
 
 // function to toggle between visible pages
-function rotate(){
+function rotate() {
     $('.game-card').hide();
-    $('.start-button').on('click',function(){
+    $('.start-button').on('click', function () {
         $('.game-card, .start-page').toggle()
+        displayNextQuestion();
     })
+}
+
+// function to create the final results page
+function totalResults(){
+    $('.game-card').hide()
+    $('#answered-right').html("You answered "+ correctResults + " right")
+    $('#answered-wrong').html("You answered "+ wrongResults + " wrong")
+    $('#unanswered').html("You ran out of time on "+ unanswered + " questions")
+
+    var newButton = $("<button>")
+    newButton.text('Restart');
+    newButton.addClass('restart');
+    $('#final-page').append(newButton);
 }
 
 
 // actually runnig the game
-
+$('#final-page').hide()
 rotate()
-
-displayNextQuestion();
-
 $(document).on('click', '.user-choice', function () {
     var userChoice = $(this).text()
     if (userChoice === questions[index].correctAnswer) {
         correctChoice()
-        correctResults ++
         console.log(correctResults)
     } else {
         incorrect(questions[index].correctAnswer)
-        wrongResults ++
         console.log(wrongResults)
     }
-
     index++
     displayNextQuestion()
 })
 
 
 
-// create hidden button that is triggered when time runs out
-// start and finish view
+
 
 
 

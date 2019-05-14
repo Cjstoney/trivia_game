@@ -10,7 +10,7 @@ body{
 }
 
 .game-card{
-    background:#FAEFEA;
+    background:#FFFFFF;
     width:75%;
     padding:20px;
     margin:50px auto;
@@ -30,7 +30,7 @@ body{
 
 .answer{
     border-style:none;
-    background:#FAEFEA;
+    background:#FFFFFF;
     font-size: 30px;
     padding: 5px ;
 }
@@ -41,7 +41,7 @@ body{
 }
 
 .start-page{
-    background:#FAEFEA;
+    background:#FFFFFF;
     width:75%;
     padding:20px;
     margin:50px auto;
@@ -53,6 +53,23 @@ button{
     font-size: 24px;
     padding:20px;
     margin: 10px;
-    background:#FAEFEA;
+    background:#FFFFFF;
     border-style: none;
+}
+
+#final-page{
+    background:#FFFFFF;
+    width:75%;
+    padding:20px;
+    margin:50px auto;
+    text-align: center;
+}
+
+#final-page h3{
+    font-size:34px;
+    padding: 20px;
+}
+
+img{
+    height: 100px;
 }
