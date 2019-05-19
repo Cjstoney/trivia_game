@@ -15,7 +15,7 @@ var questions = [
     {
         question: " Which TV character said, 'Live long and prosper'",
         choices: ["Mr. Spock", "Tommy Pickles", "Luke Skywalker", "Captain Kirk"],
-        correctAnswer: "Mr. Spck"
+        correctAnswer: "Mr. Spock"
     },
     {
         question: "What is the name of Batman's butler?",
@@ -171,6 +171,13 @@ function totalResults(){
     newButton.text('Restart');
     newButton.addClass('restart');
     $('#final-page').append(newButton);
+    // $('.retstart').on('click',function(){
+    //     console.log("i've been clicked")
+    //     correctResults = 0;
+    //     wrongResults = 0;
+    //     unanswered = 0 ;
+    //     displayNextQuestion()
+    // })
 }
 
 
@@ -189,10 +196,3 @@ $(document).on('click', '.user-choice', function () {
     index++
     displayNextQuestion()
 })
-
-
-
-
-
-
-
